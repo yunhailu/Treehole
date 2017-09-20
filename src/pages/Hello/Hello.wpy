@@ -20,9 +20,9 @@
 //    import Toast from 'wepy-com-toast'
 //    import testMixin from '../../mixins/test'
 
-    export default class Index extends wepy.page {
+    export default class Hello extends wepy.page {
         config = {
-            navigationBarTitleText: 'test'
+            navigationBarTitleText: 'hello'
         };
         components = {
 //            panel: Panel,
@@ -36,7 +36,7 @@
 //        mixins = [testMixin]
 
         data = {
-            msg: 'Hello world!'
+            msg: 'This is a Hello Page!'
         };
 
         computed = {
@@ -46,10 +46,14 @@
         };
 
         methods = {
-            init () {
-                console.log('hello init');
-            }
+//            init () {
+//                console.log('hello init');
+//            }
         };
+
+        init () {
+            console.log('hello init');
+        }
 
         events = {
             'index-emit': (...args) => {
