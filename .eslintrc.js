@@ -59,6 +59,7 @@ module.exports = {
     "no-invalid-regexp": 2,
     // 在代码块中，如果语句出现在了return, throw, break, 或者continue 后面，这些代码往往不会被使用到，这条规则就是为了检测代码块、switch语句中不被使用到的代码。
     "no-unreachable": 2,
+    "no-undef": 0,//不能有未定义的变量(1: 不能)
     // 在创建对象字面量时不允许键重复 {a:1,a:1}
     "no-dupe-keys": 2,
     "no-dupe-args": 2,//函数参数不能重复

@@ -1,0 +1,125 @@
+<style lang="less">
+    @bottom: 100rpx;
+    .home {
+        position: absolute;
+        bottom: 0;  top: 0;
+        left: 0;  right: 0;
+        &-swiper{
+            width: 100%;
+            &-item{
+                 position: absolute;
+                 bottom: @bottom;  top: 0;
+                 left: 0;  right: 0;
+            }
+        }
+        &-con{
+            position: absolute;
+            bottom: @bottom;  top: 0;
+            left: 0;  right: 0;
+            .active{
+                display: block;
+            }
+            &-item{
+                text-align: center;
+                display: block;
+            }
+        }
+        &-tabs{
+            position: absolute;
+            bottom: 0;
+            left: 0;  right: 0;
+            width: 100%;
+            height: @bottom;
+            line-height: @bottom;
+            display: inline-flex;
+            &-item{
+                font-size: 32rpx;
+                height: 100%;
+                text-align: center;
+                flex: 1;
+                overflow: auto;
+            }
+        }
+    }
+</style>
+<template>
+    <view class="home">
+        <swiper current="{{currentIndex}}" class="home-swiper" duration="300" bindchange="changeTab">
+            <block>
+                <swiper-item class="home-swiper-item">
+                    <view>热门</view>
+                </swiper-item>
+            </block>
+            <block>
+                <swiper-item class="home-swiper-item">
+                    <view>关注</view>
+                </swiper-item>
+            </block>
+            <block>
+                <swiper-item class="home-swiper-item">
+                    <view>好友</view>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="home-tabs">
+            <view id="0" class="home-tabs-item" data-current="0" bindtap="changeNav"><i class="fa fa-home fa-fw"></i>推荐</view>
+            <view id="1" class="home-tabs-item" data-current="1" bindtap="changeNav"><i class="fa fa-plus fa-fw"></i>发布</view>
+            <view id="2" class="home-tabs-item" data-current="2" bindtap="changeNav"><i class="fa fa-user fa-fw"></i>我的</view>
+        </view>
+    </view>
+</template>
+
+<script>
+    import wepy from 'wepy';
+//    import { switchTab } from '../../libs/wechatApi';
+
+    export default class Home extends wepy.page {
+        config = {
+            navigationBarTitleText: 'home'
+        };
+        components = {};
+
+        data = {
+            currentIndex: 0,
+            msg: 'This is a Home Page!'
+        };
+
+        computed = {
+            now () {
+                return +new Date();
+            }
+        };
+
+        changeCurrent (currentIndex) {
+            console.log(currentIndex);
+//            this.setData({ currentIndex });
+            this.currentIndex = currentIndex;
+        }
+
+        methods = {
+            changeNav (e) {
+                console.log(e.currentTarget, e.currentTarget.id, this.currentIndex);
+                var dataId = e.currentTarget.id;
+                this.changeCurrent(dataId);
+            },
+            changeTab (e) {
+                console.log(e.detail);
+//                this.changeCurrent(e.detail.current);
+            }
+        };
+
+        init () {
+            console.log('home init');
+        }
+
+        events = {
+            'index-emit': (...args) => {
+                console.log(`index-emit`);
+            }
+        };
+
+        onLoad () {
+            this.init();
+        }
+    }
+</script>

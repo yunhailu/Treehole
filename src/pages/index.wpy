@@ -2,6 +2,7 @@
     .hello {
         background-color: #f2f3f6;
         color: #323232;
+        margin-bottom: 20px;
         &-container{
             width: 100%;
             text-align: center;
@@ -12,10 +13,14 @@
     <view class="hello" bindtap="enterPage">
         <view class="hello-container">hello world</view>
     </view>
+    <view class="hello" bindtap="enterHome">
+        <view class="hello-container">home page</view>
+    </view>
 </template>
 
 <script>
     import wepy from 'wepy';
+    import { navigateTo } from '../libs/wechatApi';
 
     export default class Index extends wepy.page {
         config = {
@@ -35,7 +40,11 @@
             enterPage (e) {
 //                console.log('enterPage');
                 let url = `/pages/Hello/Hello`;
-                wx.navigateTo({ url });
+                navigateTo({ url });
+            },
+            enterHome (e) {
+                let url = `/pages/Home/Home`;
+                navigateTo({ url });
             }
         };
 
