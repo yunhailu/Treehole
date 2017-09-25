@@ -1,0 +1,36 @@
+@import "../../common.less";
+
+@bottom: 100rpx;
+.home {
+    position: absolute;
+    bottom: 0;  top: 0;
+    left: 0;  right: 0;
+    &-swiper{
+        width: 100%;
+        &-item{
+            position: absolute;
+            bottom: @bottom;  top: 0;
+            left: 0;  right: 0;
+        }
+    }
+    &-tabs{
+        position: absolute;
+        bottom: 0;
+        left: 0;  right: 0;
+        width: 100%;
+        height: @bottom;
+        line-height: @bottom;
+        display: inline-flex;
+        background-color: @theme;
+        &-item{
+            font-size: 32rpx;
+            height: 100%;
+            text-align: center;
+            flex: 1;
+            overflow: auto;
+        }
+        &-active{
+            color: @active;
+        }
+    }
+}

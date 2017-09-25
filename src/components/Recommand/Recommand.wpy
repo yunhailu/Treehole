@@ -1,0 +1,28 @@
+<style lang="less">
+    @import "./Recommand.less";
+</style>
+<template>
+    <view class="counter">
+        Recommand Component
+    </view>
+</template>
+<script>
+    import wepy from 'wepy';
+    // import abc from 'abc'
+
+    export default class Recommand extends wepy.component {
+        props = {
+            num: {
+                type: [Number, String],
+                coerce: function (v) {
+                    return +v;
+                },
+                default: 50
+            }
+        };
+
+        data = {};
+
+        methods = {};
+    }
+</script>

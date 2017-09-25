@@ -1,53 +1,12 @@
 <style lang="less">
-    @bottom: 100rpx;
-    .home {
-        position: absolute;
-        bottom: 0;  top: 0;
-        left: 0;  right: 0;
-        &-swiper{
-            width: 100%;
-            &-item{
-                 position: absolute;
-                 bottom: @bottom;  top: 0;
-                 left: 0;  right: 0;
-            }
-        }
-        &-con{
-            position: absolute;
-            bottom: @bottom;  top: 0;
-            left: 0;  right: 0;
-            .active{
-                display: block;
-            }
-            &-item{
-                text-align: center;
-                display: block;
-            }
-        }
-        &-tabs{
-            position: absolute;
-            bottom: 0;
-            left: 0;  right: 0;
-            width: 100%;
-            height: @bottom;
-            line-height: @bottom;
-            display: inline-flex;
-            &-item{
-                font-size: 32rpx;
-                height: 100%;
-                text-align: center;
-                flex: 1;
-                overflow: auto;
-            }
-        }
-    }
+    @import "./Home.less";
 </style>
 <template>
     <view class="home">
         <swiper current="{{currentIndex}}" class="home-swiper" duration="300" bindchange="changeTab">
             <block>
                 <swiper-item class="home-swiper-item">
-                    <view>热门</view>
+                    <Recommand></Recommand>
                 </swiper-item>
             </block>
             <block>
@@ -62,22 +21,24 @@
             </block>
         </swiper>
         <view class="home-tabs">
-            <view id="0" class="home-tabs-item" data-current="0" bindtap="changeNav"><i class="fa fa-home fa-fw"></i>推荐</view>
-            <view id="1" class="home-tabs-item" data-current="1" bindtap="changeNav"><i class="fa fa-plus fa-fw"></i>发布</view>
-            <view id="2" class="home-tabs-item" data-current="2" bindtap="changeNav"><i class="fa fa-user fa-fw"></i>我的</view>
+            <view id="0" class="home-tabs-item {{currentIndex == 0 ? 'home-tabs-active' : ''}}" data-current="0" bindtap="changeNav"><i class="fa fa-home fa-fw"></i>推荐</view>
+            <view id="1" class="home-tabs-item {{currentIndex == 1 ? 'home-tabs-active' : ''}}" data-current="1" bindtap="changeNav"><i class="fa fa-plus fa-fw"></i>发布</view>
+            <view id="2" class="home-tabs-item {{currentIndex == 2 ? 'home-tabs-active' : ''}}" data-current="2" bindtap="changeNav"><i class="fa fa-user fa-fw"></i>我的</view>
         </view>
     </view>
 </template>
 
 <script>
     import wepy from 'wepy';
-//    import { switchTab } from '../../libs/wechatApi';
+    import Recommand from '../../components/Recommand/Recommand';
 
     export default class Home extends wepy.page {
         config = {
             navigationBarTitleText: 'home'
         };
-        components = {};
+        components = {
+            Recommand
+        };
 
         data = {
             currentIndex: 0,
