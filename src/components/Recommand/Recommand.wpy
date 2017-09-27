@@ -5,7 +5,18 @@
     <view class="recommand">
         <view class="recommand-list">
             <view class="recommand-list-item" wx:for="{{list}}" wx:key="index" data-id="{{item.id}}">
-                {{item.desc}}
+                <view class="recommand-list-item-desc">{{item.desc}}<view class="recommand-list-item-all">全部</view></view>
+                <view class="recommand-list-item-icons">
+                    <view class="recommand-list-item-icons-unit love">
+                        <i class="fa fa-heart-o"></i>
+                        <view class="recommand-list-item-icons-unit-text">{{item.send}}</view>
+                    </view>
+                    <view class="recommand-list-item-icons-unit resend">
+                        <i class="fa fa-send-o"></i>
+                        <view class="recommand-list-item-icons-unit-text">{{item.love}}</view>
+                    </view>
+                </view>
+
             </view>
         </view>
     </view>
@@ -29,10 +40,14 @@
             list: [{
                 id: 1,
                 title: 'title1',
+                send: 123,
+                love: 33,
                 desc: '需要注意的是，WePY中的组件都是静态组件，是以组件ID作为唯一标识的，每一个ID都对应一个组件实例，当页面引入两个相同ID组件时，这两个组件共用同一个实例与数据，当其中一个组件数据变化时，另外一个也会一起变化。 如果需要避免这个问题，则需要分配多个组件ID和实例。'
             }, {
                 id: 2,
                 title: 'title2',
+                send: 1345,
+                love: 323,
                 desc: '需要注意的是，WePY中的组件都是静态组件，是以组件ID作为唯一标识的，每一个ID都对应一个组件实例，当页面引入两个相同ID组件时，这两个组件共用同一个实例与数据，当其中一个组件数据变化时，另外一个也会一起变化。 如果需要避免这个问题，则需要分配多个组件ID和实例。'
             }]
         };
