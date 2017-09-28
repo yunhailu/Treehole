@@ -16,7 +16,7 @@
             </block>
             <block>
                 <swiper-item class="home-swiper-item">
-                    <view>好友</view>
+                    <Mine></Mine>
                 </swiper-item>
             </block>
         </swiper>
@@ -31,13 +31,14 @@
 <script>
     import wepy from 'wepy';
     import Recommand from '../../components/Recommand/Recommand';
+    import Mine from '../../components/Mine/Mine';
 
     export default class Home extends wepy.page {
         config = {
-            navigationBarTitleText: 'home'
+            navigationBarTitleText: 'Home'
         };
         components = {
-            Recommand
+            Recommand, Mine
         };
 
         data = {
@@ -65,7 +66,7 @@
             },
             changeTab (e) {
                 console.log(e.detail);
-//                this.changeCurrent(e.detail.current);
+                this.changeCurrent(e.detail.current);
             }
         };
 

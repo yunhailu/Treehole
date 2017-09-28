@@ -1,0 +1,60 @@
+<style lang="less">
+    @import "./Mine.less";
+</style>
+<template>
+    <scroll-view scroll-y class="mine">
+        <view class="mine-list">
+            <view class="mine-list-item" wx:for="{{list}}" wx:key="index" data-id="{{item.id}}">
+                <view class="mine-list-item-arrow"><i class="fa fa-angle-right"></i></view>
+                <view class="mine-list-item-title">
+                    <i class="fa fa-{{item.icon}}"></i>
+                    <view class="mine-list-item-title-text">{{item.text}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="mine-comments">
+            <view for="{{comments}}" wx:for="{{comments}}" wx:key="index" data-id="{{index}}" class="mine-comments-item">
+                <view class="mine-comments-item-title">有人赞了你的心情</view>
+                <view class="mine-comments-item-date">{{item.date}}</view>
+                <view class="mine-comments-item-desc">
+                    <view class="mine-comments-item-desc-icon"><i class="fa fa-anchor"></i></view>
+                    <view class="mine-comments-item-desc-text">
+                        {{item.desc}} <text class="mine-comments-item-desc-text-all">全文</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</template>
+<script>
+    import wepy from 'wepy';
+
+    export default class Mine extends wepy.component {
+        data = {
+            list: [{
+                id: 1,
+                text: '我的故事',
+                icon: 'user-circle'
+            }, {
+                id: 1,
+                text: '我喜欢的',
+                icon: 'thumbs-up'
+            }],
+            comments: [{
+                date: '2017.9.30 13:21',
+                desc: '需要注意的是，WePY中的组件都是静态组件，是以组件ID作为唯一标识的，每一个ID都对应一个组件实例，当页面引入两个相同ID组件时，这两个组件共用同一个实例与数据'
+            }, {
+                date: '2017.9.30 13:21',
+                desc: '需要注意的是，WePY中的组件都是静态组件，是以组件ID作为唯一标识的，每一个ID都对应一个组件实例，当页面引入两个相同ID组件时，这两个组件共用同一个实例与数据'
+            }, {
+                date: '2017.9.30 13:21',
+                desc: '需要注意的是，WePY中的组件都是静态组件，是以组件ID作为唯一标识的，每一个ID都对应一个组件实例，当页面引入两个相同ID组件时，这两个组件共用同一个实例与数据'
+            }, {
+                date: '2017.9.30 13:21',
+                desc: '需要注意的是，WePY中的组件都是静态组件，是以组件ID作为唯一标识的，每一个ID都对应一个组件实例，当页面引入两个相同ID组件时，这两个组件共用同一个实例与数据'
+            }]
+        };
+
+        methods = {};
+    }
+</script>

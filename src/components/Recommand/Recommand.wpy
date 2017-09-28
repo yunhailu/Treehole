@@ -23,7 +23,6 @@
 </template>
 <script>
     import wepy from 'wepy';
-    // import abc from 'abc'
 
     export default class Recommand extends wepy.component {
         props = {
