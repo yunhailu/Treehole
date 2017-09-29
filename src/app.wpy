@@ -35,7 +35,8 @@ export default class extends wepy.app {
         pages: [
             'pages/index',
             'pages/Hello/Hello',
-            'pages/Home/Home'
+            'pages/Home/Home',
+            'pages/Publish/Publish'
         ],
         window: {
             backgroundTextStyle: 'light',

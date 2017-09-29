@@ -3,6 +3,7 @@
 </style>
 <template>
     <scroll-view scroll-y class="recommand">
+        <image class="recommand-banner" mode="widthFix" src="../../assets/4.png" lazy-load="true"></image>
         <view class="recommand-list">
             <view class="recommand-list-item" wx:for="{{list}}" wx:key="index" data-id="{{item.id}}">
                 <view class="recommand-list-item-desc">{{item.desc}}<view class="recommand-list-item-all">全部</view></view>
