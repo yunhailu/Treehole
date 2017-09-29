@@ -11,19 +11,14 @@
             </block>
             <block>
                 <swiper-item class="home-swiper-item">
-                    <view>关注</view>
-                </swiper-item>
-            </block>
-            <block>
-                <swiper-item class="home-swiper-item">
                     <Mine></Mine>
                 </swiper-item>
             </block>
         </swiper>
         <view class="home-tabs">
             <view id="0" class="home-tabs-item {{currentIndex == 0 ? 'home-tabs-active' : ''}}" data-current="0" bindtap="changeNav"><i class="fa fa-home fa-fw"></i>推荐</view>
-            <view id="1" class="home-tabs-item {{currentIndex == 1 ? 'home-tabs-active' : ''}}" data-current="1" bindtap="changeNav"><i class="fa fa-plus fa-fw"></i>发布</view>
-            <view id="2" class="home-tabs-item {{currentIndex == 2 ? 'home-tabs-active' : ''}}" data-current="2" bindtap="changeNav"><i class="fa fa-user fa-fw"></i>我的</view>
+            <view class="home-tabs-item" ><i class="fa fa-plus fa-fw"></i>发布</view>
+            <view id="1" class="home-tabs-item {{currentIndex == 1 ? 'home-tabs-active' : ''}}" data-current="1" bindtap="changeNav"><i class="fa fa-user fa-fw"></i>我的</view>
         </view>
     </view>
 </template>
