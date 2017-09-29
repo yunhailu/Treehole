@@ -2,7 +2,7 @@
     @import "./Recommand.less";
 </style>
 <template>
-    <scroll-view scroll-y  class="recommand">
+    <scroll-view scroll-y class="recommand">
         <view class="recommand-list">
             <view class="recommand-list-item" wx:for="{{list}}" wx:key="index" data-id="{{item.id}}">
                 <view class="recommand-list-item-desc">{{item.desc}}<view class="recommand-list-item-all">全部</view></view>
@@ -16,7 +16,6 @@
                         <view class="recommand-list-item-icons-unit-text">{{item.love}}</view>
                     </view>
                 </view>
-
             </view>
         </view>
     </scroll-view>

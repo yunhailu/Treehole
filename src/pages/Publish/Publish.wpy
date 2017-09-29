@@ -1,0 +1,46 @@
+<style lang="less">
+    @import "./Publish.less";
+</style>
+<template>
+    <view class="publish">
+
+    </view>
+</template>
+
+<script>
+    import wepy from 'wepy';
+
+    export default class Publish extends wepy.page {
+        config = {
+            navigationBarTitleText: 'Publish'
+        };
+        components = {};
+
+        data = {
+            currentIndex: 0,
+            msg: 'This is a Publish Page!'
+        };
+
+        computed = {
+            now () {
+                return +new Date();
+            }
+        };
+
+        methods = {};
+
+        init () {
+            console.log('home init');
+        }
+
+        events = {
+            'index-emit': (...args) => {
+                console.log(`index-emit`);
+            }
+        };
+
+        onLoad () {
+            this.init();
+        }
+    }
+</script>
